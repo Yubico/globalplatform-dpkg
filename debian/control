@@ -1,8 +1,8 @@
 Source: globalplatform
 Priority: extra
 Maintainer: Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), autotools-dev, zlib1g-dev, libssl-dev, libpcsclite-dev
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, zlib1g-dev, pkg-config, libssl-dev, libpcsclite-dev
+Standards-Version: 3.9.4
 Section: libs
 Homepage: http://globalplatform.sourceforge.net/
 #Vcs-Git: git://git.debian.org/collab-maint/globalplatform.git
