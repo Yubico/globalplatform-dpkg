@@ -10,7 +10,7 @@ sudo cowbuilder --update --basepath /var/cache/pbuilder/base-debian-sid.cow
 
 Clone the repository:
 
-git clone git@github.com:Yubico/yubico-c-client-dpkg.git
+git clone git@github.com:Yubico/globalplatform-dpkg.git
 
 Build the package:
 
