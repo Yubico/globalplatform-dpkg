@@ -1,0 +1,5 @@
+globalplatform (6.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #656665)
+
+ -- Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>  Fri, 20 Jan 2012 21:59:25 +0400

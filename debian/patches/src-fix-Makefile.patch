@@ -1,0 +1,23 @@
+Description: fix build errors due to @CHECK_zzz@ variables
+ Fix build error on Debian Wheezy, due to @CHECK_zzz@ variables leaking
+ to Makefile
+Author: Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+--- globalplatform-6.0.0.orig/src/Makefile.am
++++ globalplatform-6.0.0/src/Makefile.am
+@@ -29,8 +29,8 @@ TESTS = globalplatformTest
+ TESTS_ENVIRONMENT = ls -la $(top_builddir)/../gppcscconnectionplugin/src/.libs/; export LD_LIBRARY_PATH=$(top_builddir)/../gppcscconnectionplugin/src/.libs/:$LD_LIBRARY_PATH;
+ check_PROGRAMS = globalplatformTest
+ globalplatformTest_SOURCES = globalplatformTest.c
+-globalplatformTest_CFLAGS = @CHECK_CFLAGS@ $(AM_CPPFLAGS) $(PCSCLITE_CFLAGS)
+-globalplatformTest_LDADD = @CHECK_LIBS@ libglobalplatform.la $(PCSCLITE_LIBS)
++globalplatformTest_CFLAGS = $(CHECK_CFLAGS) $(AM_CPPFLAGS) $(PCSCLITE_CFLAGS)
++globalplatformTest_LDADD = $(CHECK_LIBS) libglobalplatform.la $(PCSCLITE_LIBS)
+ 
+ doc : globalplatform.c globalplatform/globalplatform.h globalplatform/unicode.h globalplatform/connectionplugin.h
+ 	doxygen Doxyfile.cfg

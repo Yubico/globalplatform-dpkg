@@ -1,0 +1,5 @@
+src-fix-Makefile.patch
+src-fix-globalplatformTest.patch
+fix-pcsclite-link.patch
+autoreconf.patch
+fix-pcsc-protocol-refs.patch

@@ -1,0 +1,2 @@
+# We link to OpenSSL, but the source is LGPL in fact, so no problem
+libglobalplatform6 binary: possible-gpl-code-linked-with-openssl

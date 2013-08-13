@@ -1,0 +1,32 @@
+Source: globalplatform
+Priority: extra
+Maintainer: Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, zlib1g-dev, libssl-dev, libpcsclite-dev
+Standards-Version: 3.9.2
+Section: libs
+Homepage: http://globalplatform.sourceforge.net/
+#Vcs-Git: git://git.debian.org/collab-maint/globalplatform.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/globalplatform.git;a=summary
+
+Package: libglobalplatform-dev
+Section: libdevel
+Architecture: any
+Depends: libglobalplatform6 (= ${binary:Version}), ${misc:Depends}
+Description: library to handle communication with GlobalPlatform cards (development files)
+ GlobalPlatform is a standard for handling applets, keys and security
+ of smart cards (see www.globalplatform.org).
+ GlobalPlatform Library provides an API for all GlobalPlatform
+ related functions. It also provides an connection plugin framework.
+ .
+ This package contains files necessary to compile programs using GlobalPlatform
+ library.
+
+Package: libglobalplatform6
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: globalplatform-connection-plugin | libgppcscconnectionplugin1
+Description: library to handle communication with GlobalPlatform cards
+ GlobalPlatform is a standard for handling applets, keys and security
+ of smart cards (see www.globalplatform.org).
+ GlobalPlatform Library provides an API for all GlobalPlatform
+ related functions. It also provides an connection plugin framework.
