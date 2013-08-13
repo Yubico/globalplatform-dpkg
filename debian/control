@@ -1,7 +1,7 @@
 Source: globalplatform
 Priority: extra
-Maintainer: Dmitry Eremin-Solenikov <dbaryshkov@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), autotools-dev, zlib1g-dev, pkg-config, libssl-dev, libpcsclite-dev
+Maintainer: Simon Josefsson <simon@josefsson.org>
+Build-Depends: debhelper (>= 9), dh-autoreconf, autotools-dev, pkg-config, zlib1g-dev, libssl-dev, libpcsclite-dev
 Standards-Version: 3.9.4
 Section: libs
 Homepage: http://globalplatform.sourceforge.net/
@@ -24,6 +24,8 @@ Description: library to handle communication with GlobalPlatform cards (developm
 Package: libglobalplatform6
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Recommends: globalplatform-connection-plugin | libgppcscconnectionplugin1
 Description: library to handle communication with GlobalPlatform cards
  GlobalPlatform is a standard for handling applets, keys and security

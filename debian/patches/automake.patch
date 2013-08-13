@@ -1,0 +1,24 @@
+Description: make autoreconf succeed with modern automake
+Author: Simon Josefsson <simon@josefsson.org>
+
+---
+
+--- globalplatform-6.0.0.orig/configure.in
++++ globalplatform-6.0.0/configure.in
+@@ -3,7 +3,7 @@
+ 
+ AC_INIT(globalplatform, 6.0.0, k_o_@users.sourceforge.net)
+ AC_COPYRIGHT(COPYING)
+-AM_INIT_AUTOMAKE([-Wall -Werror])
++AM_INIT_AUTOMAKE([-Wall])
+ AC_CONFIG_MACRO_DIR([m4])
+ 
+ # fails on Ubuntu Dapper
+@@ -11,6 +11,7 @@
+ 
+ # check programs
+ AC_PROG_CC
++m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
+ AC_PROG_CPP
+ AC_PROG_INSTALL
+ 
