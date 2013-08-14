@@ -1,0 +1,16 @@
+Description: fix -ldl to not cause -Wl,-z,relro to become -Wl,-z,relro-ldl.
+Author: Simon Josefsson <simon@josefsson.org>
+
+---
+
+--- globalplatform-6.0.0.orig/configure.in
++++ globalplatform-6.0.0/configure.in
+@@ -157,7 +157,7 @@
+ ##################################################################
+ #Fix incorrect Makefile generation: undefined reference to `dlsym'
+ ##################################################################
+-LDFLAGS+=-ldl
++LDFLAGS+=" -ldl "
+ 
+ ###############
+ #Output results

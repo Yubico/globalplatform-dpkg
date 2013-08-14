@@ -1,18 +1,18 @@
 Source: globalplatform
 Priority: extra
 Maintainer: Simon Josefsson <simon@josefsson.org>
-Build-Depends: debhelper (>= 9), dh-autoreconf, autotools-dev, pkg-config, zlib1g-dev, libssl-dev, libpcsclite-dev
+Build-Depends: debhelper (>= 9), dh-autoreconf, autotools-dev, zlib1g-dev, libssl-dev
 Standards-Version: 3.9.4
 Section: libs
 Homepage: http://globalplatform.sourceforge.net/
-#Vcs-Git: git://git.debian.org/collab-maint/globalplatform.git
-#Vcs-Browser: http://git.debian.org/?p=collab-maint/globalplatform.git;a=summary
+Vcs-Git: git://github.com/Yubico/globalplatform-dpkg.git
+Vcs-Browser: https://github.com/Yubico/globalplatform-dpkg
 
 Package: libglobalplatform-dev
 Section: libdevel
 Architecture: any
 Depends: libglobalplatform6 (= ${binary:Version}), ${misc:Depends}
-Description: library to handle communication with GlobalPlatform cards (development files)
+Description: development files for the GlobalPlatform library
  GlobalPlatform is a standard for handling applets, keys and security
  of smart cards (see www.globalplatform.org).
  GlobalPlatform Library provides an API for all GlobalPlatform

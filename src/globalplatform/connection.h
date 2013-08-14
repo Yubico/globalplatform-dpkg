@@ -29,11 +29,6 @@ extern "C"
 #endif
 
 #include <stdio.h>
-#ifdef WIN32
-#include <WinSCard.h>
-#else
-#include <PCSC/winscard.h>
-#endif
 #include "types.h"
 #include "library.h"
 #include "security.h"
@@ -46,8 +41,8 @@ extern "C"
 #define OPGP_TRACE_MODE_ENABLE 1 //!< Switch trace mode on
 #define OPGP_TRACE_MODE_DISABLE 0 //!< Switch trace mode off
 
-#define OPGP_CARD_PROTOCOL_T0 SCARD_PROTOCOL_T0 //!< Transport protocol T=0
-#define OPGP_CARD_PROTOCOL_T1 SCARD_PROTOCOL_T1 //!< Transport protocol T=1
+#define OPGP_CARD_PROTOCOL_T0 1 //!< Transport protocol T=0
+#define OPGP_CARD_PROTOCOL_T1 2 //!< Transport protocol T=1
 
 /**
  * Structure for holding all connection related functions for connection plugin libraries.

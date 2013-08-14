@@ -1,3 +1,4 @@
+fix-ld-relro.patch
 src-fix-Makefile.patch
 src-fix-globalplatformTest.patch
 fix-pcsclite-link.patch
