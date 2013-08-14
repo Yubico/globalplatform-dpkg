@@ -128,7 +128,7 @@ static OPGP_ERROR_STATUS internal_mutual_authentication() {
 	}
 	status = GP211_mutual_authentication(cardContext, cardInfo, NULL,
 			(PBYTE)OPGP_VISA_DEFAULT_KEY, (PBYTE) OPGP_VISA_DEFAULT_KEY,
-			(PBYTE) OPGP_VISA_DEFAULT_KEY, 0, 0, 0, scp, scpImpl,
+			(PBYTE) OPGP_VISA_DEFAULT_KEY, 0, 0, scp, scpImpl,
 			GP211_SCP01_SECURITY_LEVEL_C_DEC_C_MAC, &securityInfo211);
 	if (OPGP_ERROR_CHECK(status)) {
 		return status;

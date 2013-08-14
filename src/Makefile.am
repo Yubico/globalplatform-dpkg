@@ -19,8 +19,8 @@ unzip/unzip.c unzip/unzip.h unzip/zip.c unzip/zip.h \
 globalplatform/errorcodes.h globalplatform/stringify.h globalplatform/types.h globalplatform/error.h \
 dyn_generic.h dyn_unix.c connection.c stringify.c crypto.h debug.c util.c util.h loadfile.c loadfile.h crypto.c
 
-libglobalplatform_la_LDFLAGS = -version-info 6:0:0
-libglobalplatform_la_CPPFLAGS = $(AM_CPPFLAGS)
+libglobalplatform_la_LDFLAGS = -version-info 6:0:0 $(PCSCLITE_LIBS)
+libglobalplatform_la_CPPFLAGS = $(AM_CPPFLAGS) $(PCSCLITE_CFLAGS)
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = globalplatform.pc
@@ -29,8 +29,8 @@ TESTS = globalplatformTest
 TESTS_ENVIRONMENT = ls -la $(top_builddir)/../gppcscconnectionplugin/src/.libs/; export LD_LIBRARY_PATH=$(top_builddir)/../gppcscconnectionplugin/src/.libs/:$LD_LIBRARY_PATH;
 check_PROGRAMS = globalplatformTest
 globalplatformTest_SOURCES = globalplatformTest.c
-globalplatformTest_CFLAGS = $(CHECK_CFLAGS) $(AM_CPPFLAGS) $(PCSCLITE_CFLAGS)
-globalplatformTest_LDADD = $(CHECK_LIBS) libglobalplatform.la $(PCSCLITE_LIBS)
+globalplatformTest_CFLAGS = @CHECK_CFLAGS@ $(AM_CPPFLAGS) $(PCSCLITE_CFLAGS)
+globalplatformTest_LDADD = @CHECK_LIBS@ libglobalplatform.la $(PCSCLITE_LIBS)
 
 doc : globalplatform.c globalplatform/globalplatform.h globalplatform/unicode.h globalplatform/connectionplugin.h
 	doxygen Doxyfile.cfg

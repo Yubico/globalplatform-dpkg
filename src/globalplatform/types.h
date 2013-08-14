@@ -22,6 +22,10 @@
 #ifndef OPGP_TYPES_H
 #define OPGP_TYPES_H
 
+#ifndef _WIN32
+#include <PCSC/wintypes.h>
+#endif
+
 typedef void *PVOID; //!< Pointer definition.
 #ifdef _WIN32
 typedef LPTSTR OPGP_STRING; //!< A Microsoft/Muscle LPTSTR.
