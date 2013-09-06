@@ -1,0 +1,13 @@
+Description: limit the exported symbols somewhat
+Author: Simon Josefsson <simon@josefsson.org>
+
+---
+
+--- globalplatform-6.0.0.orig/src/Makefile.am
++++ globalplatform-6.0.0/src/Makefile.am
+@@ -37,3 +37,5 @@
+ 
+ MAINTAINERCLEANFILES = \
+ 	Makefile.in
++
++libglobalplatform_la_LDFLAGS += -export-symbols-regex '^(GP211_|OP201_|OPGP_).*'

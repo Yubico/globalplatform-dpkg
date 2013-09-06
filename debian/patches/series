@@ -4,3 +4,4 @@ src-fix-globalplatformTest.patch
 fix-pcsclite-link.patch
 automake.patch
 fix-pcsc-protocol-refs.patch
+export-symbols-regex.patch
